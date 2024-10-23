@@ -1,14 +1,11 @@
-name: ci-app
+name: workflow
 on: push
 jobs:
   build:
     runs-on: ubuntu-lastest
-
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: npm install
-      - run: npm run lint
       - run: make setup
       - run: make test
       - run: make lint
